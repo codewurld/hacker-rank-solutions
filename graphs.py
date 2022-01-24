@@ -32,4 +32,4 @@ def looking_for_dev():
 def person_is_developer(name):
     return name[-1] == "m"
 
-print (looking_for_dev())
+#print (looking_for_dev())
