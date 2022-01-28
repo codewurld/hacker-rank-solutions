@@ -60,15 +60,22 @@ def find_lowest_cost_node(costs):
 #keep track of processed nodes
 processed = []
 
+#find the lowest cost node not processed
 node = find_lowest_cost_node(costs)
+# while loop complete if all node = processed
 while node is not None:
     cost = costs[node]
     neighbours = graph[node]
+    # for each neighbours of this node
     for n in neighbours.keys():
         new_cost = cost + neighbours[n]
+        # if new_cost cheaper 
         if costs[n] > new_cost:
+            #update cost to new cost and maake node new parent for neighbour n
             costs[n] = new_cost
             parents[n] = node
+    # add node to processed
     processed.append(node)
+    # recurse next node
     node = find_lowest_cost_node(costs)
 
