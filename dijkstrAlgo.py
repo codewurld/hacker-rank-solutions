@@ -47,11 +47,15 @@ print(graph['start'].keys())
 #IMPLEMENTATION
 
 def find_lowest_cost_node(costs):
+    # start with infinity
     lowest_cost = float("inf")
     lowest_cost_node = None
+    # iterate each node
     for node in costs:
         cost = costs[node]
+        # if lowest cost is greater than cost and not already processed
         if lowest_cost > cost and node not in processed:
+            # reassign values
             lowest_cost = cost
             lowest_cost_node = node
     return lowest_cost_node
